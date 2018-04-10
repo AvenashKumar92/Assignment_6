@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/lblSignInAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign in to your account"
+        android:layout_below="@id/ivWallmart"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/lblPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password (required)"
+        android:layout_below="@+id/txtEmail"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/lblDontHaveAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Don't have account?"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:layout_below="@id/btnSignIn"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:id="@+id/lblEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email address (required)"
+        android:layout_below="@+id/lblSignInAccount"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/lblForgetPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Forget password?"
+        android:layout_below="@+id/txtPassword"
+        android:gravity="center_horizontal"/>
+
+    <Button
+        android:id="@+id/btnSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign In"
+        android:layout_below="@id/lblForgetPassword"
+        android:textAllCaps="false"
+        android:layout_marginTop="40dp"
+        android:onClick="OnSignIn"/>
+
+    <TextView
+        android:id="@+id/btnCreateNewAcc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create a new account"
+        android:textAllCaps="false"
+        android:layout_below="@id/lblDontHaveAccount"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textColor="@android:color/holo_blue_dark"
+        android:background="@android:color/background_light"
+        android:autoLink="all"
+        android:clickable="true"
+        android:onClick="OnCreateAccount"/>
+
+    <ImageView
+        android:id="@+id/ivWallmart"
+        android:layout_width="239dp"
+        android:layout_height="57dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        app:srcCompat="@drawable/walmartlogo" />
+
+    <EditText
+        android:id="@+id/txtEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblEmail"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+       />
+
+    <EditText
+        android:id="@+id/txtPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblPassword"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="textPassword" />
+</RelativeLayout>

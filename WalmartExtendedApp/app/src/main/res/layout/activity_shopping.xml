@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShoppingActivity">
+
+
+    <TextView
+        android:id="@+id/lblWelcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="Welcome" />
+
+    <!--<TextView
+        android:id="@+id/lblShop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblWelcome"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="Shop by categories" />
+
+    <TextView
+        android:id="@+id/lblElectronics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblShop"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Electronics" />
+
+    <TextView
+        android:id="@+id/lblClothing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblShop"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:text="Clothing" />
+
+    <TextView
+        android:id="@+id/lblFood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivClothing"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:text="Food" />
+
+    <TextView
+        android:id="@+id/lblBeauty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivClothing"
+        android:layout_marginLeft="10dp"
+        android:text="Beauty" />
+
+    <ImageView
+        android:id="@+id/ivBeauty"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:layout_below="@+id/lblBeauty"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:onClick="OnImageClick"
+        android:adjustViewBounds="true"
+        app:srcCompat="@drawable/beauty" />
+
+    <ImageView
+        android:id="@+id/ivClothing"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:layout_below="@id/lblClothing"
+        android:layout_marginTop="10dp"
+        android:adjustViewBounds="true"
+        android:onClick="OnImageClick"
+        android:layout_alignParentRight="true"
+        app:srcCompat="@drawable/clothing" />
+
+    <ImageView
+        android:id="@+id/ivElectronics"
+        android:layout_width="86dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblElectronics"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:adjustViewBounds="true"
+        android:onClick="OnImageClick"
+        app:srcCompat="@drawable/electronics" />
+
+    <ImageView
+        android:id="@+id/ivFood"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:adjustViewBounds="true"
+        android:layout_below="@id/lblFood"
+        android:layout_alignParentRight="true"
+        android:onClick="OnImageClick"
+        app:srcCompat="@drawable/food" />!-->
+</RelativeLayout>

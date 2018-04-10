@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Walmart Extended App</string>
+    <string name="productKey">Key</string>
+    <string-array name="planets_array">
+        <item>Lipstick</item>
+        <item>Makeup</item>
+        <item>Eyeliner</item>
+        <item>Bands</item>
+    </string-array>
+
+    <string-array name="lstCloth">
+        <item>Pants</item>
+        <item>Shirts</item>
+        <item>Trousers</item>
+        <item>Socks</item>
+        <item>Shoes</item>
+        <item>Suits</item>
+    </string-array>
+
+</resources>

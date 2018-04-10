@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RegisterActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="* required fields"/>
+
+
+
+    <TextView
+        android:id="@+id/lblFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="First name*"/>
+
+    <EditText
+        android:id="@+id/txtFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:background="@drawable/edittextbg"/>
+
+    <TextView
+        android:id="@+id/lblLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Last name*"/>
+
+    <EditText
+        android:id="@+id/txtLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:background="@drawable/edittextbg"/>
+
+    <TextView
+        android:id="@+id/lblSignUpEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email address*"/>
+
+    <EditText
+        android:id="@+id/txtSignUpEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:inputType="textEmailAddress"
+        android:background="@drawable/edittextbg"/>
+
+    <TextView
+        android:id="@+id/lblSignUpPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Password*"/>
+
+    <EditText
+        android:id="@+id/txtSignUpPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:inputType="textPassword"
+        android:background="@drawable/edittextbg"/>
+
+    <Button
+        android:id="@+id/btnSignUpCreateAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Account"
+        android:background="@android:color/holo_blue_dark"
+        android:textColor="@android:color/white"
+        android:textAllCaps="false"
+        android:onClick="OnSignUpCreateAccount"/>
+
+</LinearLayout>
