@@ -1,12 +1,12 @@
 package com.example.avenash_2.walmartextendedapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,42 +18,46 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        initList();
+
+        try {
+            LoginManager.getInstance().signIn(this,null);
+        } catch (LoginException e) {
+            e.printStackTrace();
+        }
+
         txtEmail=findViewById(R.id.txtEmail);
         txtPass=findViewById(R.id.txtPassword);
     }
 
-    private void initList()
-    {
-        UserDataUtils.getInstance().addUser(new User("Avenash@yahoo.com", "123"));
-        UserDataUtils.getInstance().addUser(new User("Rahul@yahoo.com", "321"));
-        UserDataUtils.getInstance().addUser(new User("Rajesh@yahoo.com", "123"));
-        UserDataUtils.getInstance().addUser(new User("Malik@yahoo.com", "321"));
-        UserDataUtils.getInstance().addUser(new User("Osman@yahoo.com", "123"));
-    }
 
-    private void resetEmailPassword(){
+
+
+    private void resetEmailPasswordFields(){
         txtEmail.setText("");
         txtPass.setText("");
     }
+
+
+
+
     public void OnSignIn(View view) {
         UtilityClass.hideSoftKeyboard(this);
         User loginUser=new User(txtEmail.getText().toString().trim(), txtPass.getText().toString());
-        if(!UserDataUtils.getInstance().validateUser(loginUser)) {
-            Toast.makeText(getApplicationContext(), "Invalid login email or password!",
+
+        try {
+            LoginManager.getInstance().signIn(this,loginUser);
+        } catch (LoginException e) {
+            Toast.makeText(getApplicationContext(), e.getMessage(),
                     Toast.LENGTH_LONG).show();
-            resetEmailPassword();
-            return;
         }
-        Intent intent = new Intent(this,ShoppingActivity.class);
-        intent.putExtra(String.valueOf(R.id.txtEmail), loginUser.getEmail());
-        startActivity(intent);
+        resetEmailPasswordFields();
     }
+
+
 
 
 
     public void OnCreateAccount(View view) {
-        UtilityClass.hideSoftKeyboard(this);
         Intent intend=new Intent(getApplicationContext(), RegisterActivity.class);
         startActivity(intend);
     }

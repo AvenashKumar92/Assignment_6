@@ -1,7 +1,9 @@
 package com.example.avenash_2.walmartextendedapp;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
@@ -10,9 +12,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class ShoppingActivity extends AppCompatActivity {
 
@@ -68,10 +68,21 @@ public class ShoppingActivity extends AppCompatActivity {
         actionBar.addTab(actionBar.newTab().setText("Logout").setTabListener(listener));
     }
 
+
+    private void logout(){
+        String preferencesName=getResources().getString(R.string.preferenceName);
+        SharedPreferences sharedPreferences=getSharedPreferences(preferencesName, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor=sharedPreferences.edit();
+        editor.remove(getResources().getString(R.string.useremail));
+        editor.remove(getResources().getString(R.string.password));
+        editor.commit();
+    }
+
+
     public void alert(){
         AlertDialog.Builder builder=new AlertDialog.Builder(this);
         builder.setTitle("Alert Message");
-        builder.setMessage("Do you want to Exit?");
+        builder.setMessage("Are you sure you want to logout from the app?");
         builder.setIcon(R.drawable.alerticon);
         AlertDialog.OnClickListener listener=new AlertDialog.OnClickListener(){
 
@@ -79,9 +90,8 @@ public class ShoppingActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
                 if(which==dialog.BUTTON_POSITIVE) {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                        finish();
-                    }
+                    logout();
+                    finish();
                 }
             }
         };
@@ -89,25 +99,4 @@ public class ShoppingActivity extends AppCompatActivity {
         builder.setNegativeButton("No", listener);
         builder.show();
     }
-
-    /*public void OnImageClick(View view) {
-        final int id=view.getId();
-        Intent intent = null;
-        switch(id){
-            case R.id.ivBeauty:
-                intent = new Intent(getApplicationContext(),BeautyProductActivity.class);
-                break;
-            case R.id.ivClothing:
-                intent = new Intent(getApplicationContext(),ClothActivity.class);
-                break;
-            case R.id.ivElectronics:
-                intent =new Intent(getApplicationContext(), ElectronicsActivity.class);
-                break;
-            case R.id.ivFood:
-                intent=new Intent(getApplicationContext(), FoodActivity.class);
-                break;
-        }
-        if(intent!=null)
-            startActivity(intent);
-    }*/
 }

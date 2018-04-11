@@ -1,5 +1,6 @@
 package com.example.avenash_2.walmartextendedapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -40,7 +41,14 @@ public class RegisterActivity extends AppCompatActivity {
             return;
         }
 
-        UserDataUtils.getInstance().addUser(user);
+        LoginManager.getInstance().addUser(user);
+
+        try {
+            LoginManager.getInstance().signIn(this, user);
+        } catch (LoginException e) {
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG);
+        }
+
         resetFields();
     }
 
