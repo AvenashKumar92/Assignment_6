@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">PersonalizedWebApp</string>
+    <string name="preferenceName">PersonalizedWebApp</string>
+    <string name="useremail">username</string>
+    <string name="dusername">Not Found</string>
+    <string name="password">password</string>
+    <string name="dpassword">Invalid</string>
+
+    <string name="tabPersonalSite">Personal Site</string>
+    <string name="tabSoftware">Software</string>
+    <string name="tabFood">Food</string>
+    <string name="tabLogout">Logout</string>
+    <string name="keyWebUrl">keyWebUrl</string>
+
+
+    <string-array name="lstPersonalSites">
+        <item>http://online.cs.mum.edu/</item>
+        <item>https://register.cs.mum.edu/register/</item>
+        <item>https://www.midwestone.com</item>
+        <item>http://www.mum.edu/</item>
+        <item>https://www.google.com</item>
+    </string-array>
+
+    <string-array name="lstFood">
+        <item>foodtank.org</item>
+        <item>www.theperennialplate.com</item>
+        <item>www.geniuskitchen.com</item>
+        <item>https://foodgawker.com</item>
+    </string-array>
+
+    <string-array name="lstSoftwares">
+        <item>www.download.cnet.com</item>
+        <item>www.softpedia.com</item>
+        <item>https://filehippo.com</item>
+        <item>https://www.cnet.com</item>
+    </string-array>
+
+</resources>

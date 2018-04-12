@@ -1,0 +1,47 @@
+package com.example.avenash_2.personalizedwebapp;
+
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+
+public class WebviewActivity extends AppCompatActivity {
+
+    WebView wvWebsiteView;
+    Activity activity ;
+    private ProgressDialog progDailog;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_webview);
+
+        activity = this;
+
+        progDailog = ProgressDialog.show(activity, "Loading","Please wait...", true);
+        progDailog.setCancelable(false);
+
+        wvWebsiteView=findViewById(R.id.wvWebsiteView);
+
+        Intent intent=getIntent();
+        String webUrl=intent.getStringExtra(getResources().getString(R.string.keyWebUrl));
+        wvWebsiteView.getSettings().setJavaScriptEnabled(true);
+        wvWebsiteView.setWebViewClient(new WebViewClient(){
+
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                progDailog.show();
+                view.loadUrl(url);
+
+                return true;
+            }
+            @Override
+            public void onPageFinished(WebView view, final String url) {
+                progDailog.dismiss();
+            }
+        });
+        wvWebsiteView.loadUrl(webUrl);
+    }
+}
